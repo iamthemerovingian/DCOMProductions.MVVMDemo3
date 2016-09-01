@@ -6,12 +6,12 @@ namespace DCOMProductions.MVVMDemo.Commands
     using DCOMProductions.MVVMDemo.ViewModels;
     internal class CustomerUpdateCommand : ICommand
     {
+        private CustomerViewModel viewModel;
+
         public CustomerUpdateCommand(CustomerViewModel viewModel)
         {
-            _ViewModel = viewModel;
+            this.viewModel = viewModel;
         }
-
-        private CustomerViewModel _ViewModel;
 
         #region ICommand Members
 
@@ -23,12 +23,13 @@ namespace DCOMProductions.MVVMDemo.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _ViewModel.CanUpdate;
+            //return _ViewModel.CanUpdate;
+            return string.IsNullOrWhiteSpace(viewModel.Customer.Error);
         }
 
         public void Execute(object parameter)
         {
-            _ViewModel.SaveChanges();   
+            viewModel.SaveChanges();   
         }
 
         #endregion

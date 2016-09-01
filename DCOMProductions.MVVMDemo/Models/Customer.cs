@@ -2,26 +2,28 @@
 {
     using System;
     using System.ComponentModel;
-    public class Customer : INotifyPropertyChanged
+    public class Customer : INotifyPropertyChanged, IDataErrorInfo
     {
         public Customer(string customerName)
         {
             Name = customerName;  
         }
 
-        private string _Name;
+        private string name;
         public string Name
         {
             get
             {
-                return _Name;
+                return name;
             }
             set
             {
-                _Name = value;
+                name = value;
                 OnPropertyChanged("Name");
             }
         }
+
+      
 
         #region INotifyPropertyChanged Members
 
@@ -34,6 +36,34 @@
             if (handler != null)
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
+        #region IDataErrorInfo Members
+        public string Error
+        {
+            get;
+            private set;
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                if (columnName == "Name")
+                {
+                    if (string.IsNullOrWhiteSpace(Name))
+                    {
+                        Error = "Name cannot be null or empty. ";
+                    }
+                    else
+                    {
+                        Error = null;
+                    }
+                }
+                return Error;
             }
         }
 
