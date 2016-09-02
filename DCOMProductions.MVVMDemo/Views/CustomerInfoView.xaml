@@ -9,7 +9,7 @@
     <DockPanel LastChildFill="True">
         <Label DockPanel.Dock="Top" FontSize="48" FontFamily="Mistral" Foreground="#696969">Saved!</Label>
         <Rectangle DockPanel.Dock="Bottom" Height="64" Fill="#ECECEC"/>
-        <Label DockPanel.Dock="Top" Content="{Binding Info, FallbackValue='Your data was updated'}" VerticalContentAlignment="Bottom"/>
+        <Label DockPanel.Dock="Top" Content="{Binding Info, FallbackValue='but we dont know what was updated.....'}" VerticalContentAlignment="Bottom"/>
 
     </DockPanel>
 </Window>
