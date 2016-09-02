@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DCOMProductions.MVVMDemo.Views"
         mc:Ignorable="d"
-        Title="CustomerInfoView" Height="184.519" Width="372.176">
+        Title="CustomerInfoView" Height="198.954" Width="372.176">
     <DockPanel LastChildFill="True">
         <Label DockPanel.Dock="Top" FontSize="48" FontFamily="Mistral" Foreground="#696969">Saved!</Label>
         <Rectangle DockPanel.Dock="Bottom" Height="64" Fill="#ECECEC"/>

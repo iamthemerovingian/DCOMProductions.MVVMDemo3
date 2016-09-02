@@ -10,7 +10,7 @@
     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="16">
         <Label> Customer Name: </Label>
         <TextBox Text="{Binding Customer.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width = "336" />
-        <Button Command="{Binding UpdateCommand}">Update </Button>
+        <Button Command="{Binding UpdateCommand}" Width="65">Update </Button>
     </StackPanel>
     
 </Window>
